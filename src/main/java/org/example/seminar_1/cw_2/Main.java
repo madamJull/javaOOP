@@ -7,14 +7,28 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Product> list = new ArrayList();
-        list.add(new Water("a", 50.00, 1));
-        list.add(new Water("b", 55.00, 1));
-        list.add(new Water("b", 55.00, 2));
-        list.add(new Water("b", 55.00, 2));
         WaterVendingMachine machine = new WaterVendingMachine(list);
 
-        Water water = machine.getProduct("a", 1);
+        list.add(new Water("water1", 50.00, 1));
+        list.add(new Water("water1", 50.00, 1));
+        list.add(new Water("water2", 55.00, 2));
+        list.add(new Water("water2", 65.00, 2));
 
-        System.out.println(machine.getProduct("a", 1));
+        Water water = machine.getProduct("water1", 1);
+        System.out.println(machine.getProduct("water1", 1));
+
+/**
+ * Д/З семинар 1
+ */
+        List<Product> list1 = new ArrayList();
+        HotDrinkVendingMachine machine1 = new HotDrinkVendingMachine(list1);
+
+        list1.add(new HotDrink("tea", 15.00, 70, 1));
+        list1.add(new HotDrink("tea", 15.00, 70, 1));
+        list1.add(new HotDrink("coffee", 45.00, 65, 1));
+        list1.add(new HotDrink("coffee", 65.00, 80, 1));
+
+        HotDrink hotDrink = machine1.getProduct("tea", 70, 1);
+        System.out.println(machine1.getProduct("tea", 70, 1));
     }
 }
